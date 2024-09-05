@@ -61,7 +61,7 @@
               <a href="https://github.com/shuoyueli4519/">Yang Zheng</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?user=hxGs4ukAAAAJ&hl=zh-CN">Lei Zhang</a><sup>1</sup>,
+              <a href="https://openreview.net/profile?id=~Lei_Zhang54">Lei Zhang</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=m-0P8sgAAAAJ">Zhendong Mao</a><sup>1</sup><sup>&#10013</sup>,</span>
@@ -78,7 +78,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2403.00483.pdf"
+                <a href="https://arxiv.org/pdf/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -348,12 +348,12 @@
           while maintaining other irreverent ones purely controlled by the given texts, 
           achieving both high-quality similarity and controllability in a real-time open-domain scenario.
           <br>
-          <b>Training Paradigm: </b> 
+          <b>Training Pipeline: </b> 
           RealCustom only learns the generalized alignment capabilities between visual conditions and pre-trained models' 
           original text conditions on large-scale text-image datasets through a novel adaptive scoring module, 
           which modulates the influence quantity based on text and currently generated features.
           <br>
-          <b>Inference Paradigm: </b> 
+          <b>Multilevel Contrastive Learning Paradigm: </b> 
           real-time customization is achieved by a novel adaptive mask guidance strategy, 
           which gradually narrows down a real text word based on the learned alignment capabilities.
         </p>
@@ -376,6 +376,30 @@
            redundant features, enabling flexible text control over complex pose e.g., the cat toy in the first row
             and shape (e.g., cat driving car in the fourth row) transformations. In contrast, other methods
              underperform due to the influence of coupled redundant features.
+        </p>
+        <img src="./static/images/sd15_supplement.jpg"
+        alt="Interpolate start reference image."/>
+        <p>
+          Qualitative results with existing methods on SD-v1.5. Compared to previous models based on SD-v1.5,
+           our method excels in text editability and individual similarity. It performs well even with complex
+            shape  (e.g., turning a vase into a cup in the second row) and accessorization modification 
+            (e.g., clock with angle wings in the fourth row), where other models underperform.
+        </p>
+        <img src="./static/images/multi_subject.png"
+        alt="Interpolate start reference image."/>
+        <p>
+          To further demonstrate CustomContrast's capabilities in complex editing, we present qualitative
+           results in multi-object. Our model can preserve the multiple subject similarities while achieving
+          superior editing capabilities (e.g., only the cat toy wears a hat in the first row; only the cat
+           wears glasses in the third row). 
+        </p>
+        <img src="./static/images/humanface.jpg"
+        alt="Interpolate start reference image."/>
+        <p>
+          Qualitative comparison of human domain generation with existing methods.  Compared with previous work, 
+          our model achieves more accurate style transformations (e.g., the second row) and viewpoint changes 
+          (e.g., the third row) while preserving ID similarity. This indicates that our model has learned intrinsic
+           ID features and successfully disentangled redundant features. 
         </p>
 
         <img src="static/images/comparison_quantative.jpg"
@@ -404,18 +428,25 @@
           <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div> -->
-        <img src="./static/images/attention.jpg"
+        <img src="./static/images/visualization_1.png"
+        alt="Interpolate start reference image."/>
+        <p>
+        <div class="content has-text-left">
+          (a) Dog's view examples. (b) T-SNE of ELITE representations. (c)  T-SNE of our representations, 
+          where 2nd represents the second cross attention, and so on. Ideal representations should achieve  
+          intra-consistency (i.e., points with the same shape should be spatially closer in the figure). 
+          ELITE is influenced by different views,  with view features coupled into the representations.  
+          However,  CustomContrast  decouples view features from the intrinsic features,  preserving 
+          relative distances between samples.
+        </div>
+        </p>
+        <!-- <img src="./static/images/attention.jpg"
                  alt="Interpolate start reference image."/>
         <p>
           <div class="content has-text-left">
-          Illustration of gradually narrowing the real words into the given subjects. 
-          RealCustom generated results (first row) and the original text-to-image generated result (second row) by pre-trained models with the same seed. 
-          The mask is visualized by the Top-25% highest attention score regions of the real word “toy”. 
-          We could observe that starting from the same state (the same mask since there's no information of the given subject is introduced at the beginning), 
-          RealCustom gradually forms the structure and details of the given subject by our proposed adaptive mask strategy, 
-          achieving the open-domain zero-shot customization.
+          Illustration 
           </div>
-        </p>
+        </p> -->
 
       </div>
     </div>
