@@ -346,14 +346,17 @@
                  alt="Interpolate start reference image."/>
       <div class="content has-text-left">
         <p>
-          <b>Core Idea: </b> disentangle the influence scope of the <b> given subject </b> from the influence scope of the <b>given text</b>, 
-          by precisely limiting the given subjects to influence only the relevant parts 
-          while maintaining other irreverent ones purely controlled by the given texts, 
-          achieving both high-quality similarity and controllability in a real-time open-domain scenario.
+          <b>Core Idea: </b> we propose a <b>cross-differential perspective</b>, i.e., comparing differences between target 
+          samples via contrastive learning, which aims to capture each subject's accurate representation from irrelevant representation (e.g., view, pose, and background). 
+          This perspective achieves intra-consistency and inter-distinctiveness. Firstly, Intra-consistency is achieved by pulling images of the 
+          same subject under different contexts closer, decoupling irrelevant attributes. Secondly, 
+          Inter-distinctiveness is ensured by comparing the specific subject with others, thereby further learning the
+          fine-grained intrinsic features. These allow the model to focus more on the intrinsic subject attributes 
+          than redundant attributes.           
           <br>
           <b>MFI-Encoder: </b> 
           The Multimodal Feature Injection (MFI) Encoder is designed to extract multimodal features (textual and image
-          features), which consists of three main components: Visual-Qformer, Textual-Qformer, and the TV Fusion Module. 
+          features) to support the implementation of multilevel contrastive learning, which consists of three main components: Visual-Qformer, Textual-Qformer, and the TV Fusion Module. 
           Visual-Qformer and Textual-Qformer are used to extract visual and textual embeddings. The TV Fusion module uses textual embeddings 
           as queries to capture text-related visual embeddings. 
 
