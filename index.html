@@ -139,29 +139,34 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/images/teaser.png"
-                type="video/mp4">
-      </video> -->
+      <!-- Uncomment the video element if needed -->
+      <!-- 
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/images/teaser.png" type="video/mp4">
+      </video> 
+      -->
       <h2 class="title is-3 has-text-centered">Motivation</h2>
-      <h2 class="subtitle has-text-centered">
-      <img src="./static/images/intro1.png"
-                 alt="Interpolate start reference image."/>
-      
-      <h2 class="subtitle has-text-centered">
-        Comparison with existing perspective. 
-        (a) Existing studies learn each subject feature with entangled redundant features 
-        (e.g., view, pose), suffering a trade-off between similarity and controllability (redundant and
-         intrinsic features simultaneously overfit or underfit since they are coupled together). 
-         (b) In contrast, we rethink it from a cross-differential perspective.  
-         By using contrastive learning to ensure intra-consistency (features of the same subject are 
-         spatially closer) and inter-distinctiveness (features of different subjects have 
-         distinguished differences), our model disentangles the subject intrinsic
-          features from irrelevant features for dual optimization of controllability and similarity.
-      </h2>
+      <div class="subtitle has-text-centered">
+        <img src="./static/images/intro1.png" alt="Interpolate start reference image.">
+      </div>
+      <div class="content has-text-left">
+        <p>
+          Comparison with existing perspective. 
+          (a) Existing studies learn each subject feature with entangled redundant features 
+          (e.g., view, pose), suffering a trade-off between similarity and controllability 
+          (redundant and intrinsic features simultaneously overfit or underfit since they are 
+          coupled together). 
+          (b) In contrast, we rethink it from a cross-differential perspective.  
+          By using contrastive learning to ensure intra-consistency (features of the same subject 
+          are spatially closer) and inter-distinctiveness (features of different subjects have 
+          distinguished differences), our model disentangles the subject intrinsic features from 
+          irrelevant features for dual optimization of controllability and similarity.
+        </p>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!--examples-->
 <!-- <section class="hero is-light is-small">
