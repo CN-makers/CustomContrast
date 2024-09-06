@@ -351,14 +351,18 @@
           while maintaining other irreverent ones purely controlled by the given texts, 
           achieving both high-quality similarity and controllability in a real-time open-domain scenario.
           <br>
-          <b>Training Pipeline: </b> 
-          RealCustom only learns the generalized alignment capabilities between visual conditions and pre-trained models' 
-          original text conditions on large-scale text-image datasets through a novel adaptive scoring module, 
-          which modulates the influence quantity based on text and currently generated features.
+          <b>MFI-Encoder: </b> 
+          The Multimodal Feature Injection (MFI) Encoder is designed to extract multimodal features (textual and image
+          features), which consists of three main components: Visual-Qformer, Textual-Qformer, and the TV Fusion Module. 
+          Visual-Qformer and Textual-Qformer are used to extract visual and textual embeddings. The TV Fusion module uses textual embeddings 
+          as queries to capture text-related visual embeddings. 
+
           <br>
           <b>Multilevel Contrastive Learning Paradigm: </b> 
-          real-time customization is achieved by a novel adaptive mask guidance strategy, 
-          which gradually narrows down a real text word based on the learned alignment capabilities.
+          The Multilevel Contrastive Learning (MCL) paradigm includes CSCL, aligning high-level semantics by contrasting visual and textual embeddings via CLS tokens,  and MACL, 
+          which is applied to text embeddings from different cross-attention layers. MACL decouples redundant subject features by aligning positive samples 
+          (segmented images of the same subject from various views, positions, and sizes), while preserving relative
+           distances by contrasting with other subjects.
         </p>
       </div>
       </div>
