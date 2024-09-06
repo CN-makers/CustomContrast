@@ -55,7 +55,7 @@
             <span class="author-block">
               <a href="https://corleone-huang.github.io/">Mengqi Huang</a><sup>1</sup>,</span>
             <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=ow1jGJkAAAAJ&hl=zh-CN&oi=ao">Zhuowei Chen</a><sup>1</sup>,
+                <a href="https://scholar.google.com/citations?user=ow1jGJkAAAAJ&hl=zh-CN&oi=ao">Zhuowei Chen</a><sup>1</sup><sup>2</sup>,
               </span>
             <span class="author-block">
               <a href="https://github.com/shuoyueli4519/">Yang Zheng</a><sup>1</sup>,
@@ -69,6 +69,9 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Science and Technology of China, </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>2</sup>ByteDance, </span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>&#10013</sup>Corresponding author.</span>
@@ -402,18 +405,30 @@
            ID features and successfully disentangled redundant features. 
         </p>
 
-        <img src="static/images/comparison_quantative.jpg"
+        <img src="static/images/comparison_quatative_sd15.png"
                  alt="Interpolate start reference image."/>
         <p>
           <div class="content has-text-left">
-          <b>Quantitative comparisons. </b>
+          <b>Quantitative comparisons with SD-v1.5 based methods. </b>
           <br>
-          <b>Left :</b> Our proposed RealCustom outperforms existing methods in both controllability and similarity.
-          The significant improvement on ImageReward validates that RealCustom could generate customized images with much higher quality (higher aesthetic score); 
+          <b>Left :</b>  CustomContrast demonstrates significant improvements in both text controllability and 
+          image similarity compared to previous SD-V1.5 methods, with a notable increase in the ImageReward metric 
+          from 0.157 to 0.454; 
           <br>
-          <b>Right :</b> We plot the “CLIP-T verse DINO”, 
-          showing that the existing methods are trapped into the dual-optimum paradox, 
-          while RealCustom completely get rid of it and achieve both high-quality similarity and controllability.
+          <b>Right :</b> Performance visualization with existing
+           SD-v1.5-based methods shows our model's superior text controllability and subject similarity. 
+           The blue line illustrates the dual optimum paradox (controllability and similarity) by adjusting 
+           the weight factor of the IP-Adapter.
+          </div>
+        </p>
+        <img src="static/images/sdxl_table.png"
+            alt="Interpolate start reference image."/>
+        <p>
+          <div class="content has-text-left">
+          <br>
+          <b>Quantitative comparisons</b>  with more advanced base models. Kv2.2 refers to  Kandinsky v2.2. The quantitative comparison for SDXL indicates that
+           our method also improves both controllability and similarity, with the CLIP-T  increasing from 0.312 to 0.329.
+        
           </div>
         </p>
 
