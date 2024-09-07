@@ -55,7 +55,7 @@
             <span class="author-block">
               <a href="https://corleone-huang.github.io/">Mengqi Huang</a><sup>1</sup>,</span>
             <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=ow1jGJkAAAAJ&hl=zh-CN&oi=ao">Zhuowei Chen</a><sup>1</sup><sup>2</sup>,
+                <a href="https://scholar.google.com/citations?user=ow1jGJkAAAAJ&hl=zh-CN&oi=ao">Zhuowei Chen</a><sup>1</sup>,
               </span>
             <span class="author-block">
               <a href="https://github.com/shuoyueli4519/">Yang Zheng</a><sup>1</sup>,
@@ -69,9 +69,6 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Science and Technology of China, </span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>2</sup>ByteDance, </span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>&#10013</sup>Corresponding author.</span>
@@ -136,40 +133,9 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- Uncomment the video element if needed -->
-      <!-- 
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/images/teaser.png" type="video/mp4">
-      </video> 
-      -->
-      <h2 class="title is-3 has-text-centered">Motivation</h2>
-      <div class="subtitle has-text-centered">
-        <img src="./static/images/intro1.png" alt="Interpolate start reference image.">
-      </div>
-      <div class="content has-text-left">
-        <p>
-          Comparison with existing perspective. 
-          (a) Existing studies learn each subject feature with entangled redundant features 
-          (e.g., view, pose), suffering a trade-off between similarity and controllability 
-          (redundant and intrinsic features simultaneously overfit or underfit since they are 
-          coupled together). 
-          (b) In contrast, we rethink it from a cross-differential perspective.  
-          By using contrastive learning to ensure intra-consistency (features of the same subject 
-          are spatially closer) and inter-distinctiveness (features of different subjects have 
-          distinguished differences), our model disentangles the subject intrinsic features from 
-          irrelevant features for dual optimization of controllability and similarity.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <!--examples-->
-<!-- <section class="hero is-light is-small">
+<section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="section-title">
@@ -219,11 +185,52 @@
                    alt="Puppet."/>
           </div>
         </div>
+        <div class="item item-puppet">
+          <div class="carousel-content">
+            <img src="static/images/slider/show_case7.jpg"
+                   alt="Puppet."/>
+          </div>
+        </div>
 
       </div>
     </div>
   </div>
-</section> -->
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- Uncomment the video element if needed -->
+      <!-- 
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/images/teaser.png" type="video/mp4">
+      </video> 
+      -->
+      <h2 class="title is-3 has-text-centered">Motivation</h2>
+      <div class="subtitle has-text-centered">
+        <img src="./static/images/intro1.png" alt="Interpolate start reference image.">
+      </div>
+      <div class="content has-text-left">
+        <p>
+          Comparison with existing perspective. 
+          (a) Existing studies learn each subject feature with entangled redundant features 
+          (e.g., view, pose), suffering a trade-off between similarity and controllability 
+          (redundant and intrinsic features simultaneously overfit or underfit since they are 
+          coupled together). 
+          (b) In contrast, we rethink it from a cross-differential perspective.  
+          By using contrastive learning to ensure intra-consistency (features of the same subject 
+          are spatially closer) and inter-distinctiveness (features of different subjects have 
+          distinguished differences), our model disentangles the subject intrinsic features from 
+          irrelevant features for dual optimization of controllability and similarity.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- <section class="hero is-light is-small">
   <div class="hero-body">
@@ -351,13 +358,15 @@
                  alt="Interpolate start reference image."/>
       <div class="content has-text-left">
         <p>
-          <b>Core Idea: </b> we propose a <b>cross-differential perspective</b>, i.e., comparing differences between target 
-          samples via contrastive learning, which aims to capture each subject's accurate representation from irrelevant representation (e.g., view, pose, and background). 
-          This perspective achieves intra-consistency and inter-distinctiveness. Firstly, Intra-consistency is achieved by pulling images of the 
-          same subject under different contexts closer, decoupling irrelevant attributes. Secondly, 
-          Inter-distinctiveness is ensured by comparing the specific subject with others, thereby further learning the
-          fine-grained intrinsic features. These allow the model to focus more on the intrinsic subject attributes 
-          than redundant attributes.           
+          <b>Core Idea: </b> We propose a <b>cross-differential perspective</b>, i.e., 
+          comparing differences between target samples via contrastive learning, which aims
+          to capture each subject's accurate representation from irrelevant representation
+          (e.g., view, pose, and background).  This perspective achieves intra-consistency 
+          and inter-distinctiveness. Firstly,  intra-consistency is achieved by pulling images
+          of the same subject under different contexts closer, decoupling irrelevant attributes. 
+          Secondly, inter-distinctiveness is ensured by comparing the specific subject with others, 
+          thereby further learning the fine-grained intrinsic features. These allow the model to focus
+          more on the intrinsic subject attributes than redundant attributes.        
           <br>
           <b>MFI-Encoder: </b> 
           The Multimodal Feature Injection (MFI) Encoder is designed to extract multimodal features (textual and image
@@ -408,14 +417,14 @@
           superior editing capabilities (e.g., only the cat toy wears a hat in the first row; only the cat
            wears glasses in the third row). 
         </p>
-        <img src="./static/images/humanface.jpg"
+        <!-- <img src="./static/images/humanface.jpg"
         alt="Interpolate start reference image."/>
         <p>
           Qualitative comparison of human domain generation with existing methods.  Compared with previous work, 
           our model achieves more accurate style transformations (e.g., the second row) and viewpoint changes 
           (e.g., the third row) while preserving ID similarity. This indicates that our model has learned intrinsic
            ID features and successfully disentangled redundant features. 
-        </p>
+        </p> -->
 
         <img src="static/images/comparison_quatative_sd15.png"
                  alt="Interpolate start reference image."/>
